@@ -104,32 +104,16 @@ def make_gif_frames(base_img, strength, frames=8):
 # ======================
 # Streamlit UI
 # ======================
-st.title("静止画をそのままGIFまたはJPGに変換")
+st.title("静止画をGIFまたはJPGに変換")
 
-st.write("① 画像をアップロード → ② 出力形式を選択 → ③ ダウンロード")
-
-st.markdown("""
-<div style="
-    border: 2px dashed #999;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 10px;
-">
-📂 ここに画像をドラッグ＆ドロップ<br>
-または下のボタンから画像を選択
-</div>
-""", unsafe_allow_html=True)
+st.write("① 画像をアップロード → ② 出力形式を選択 → ③ 加工の強さを選択 → ④ ダウンロード")
 
 uploaded = st.file_uploader(
     "",
     type=["png", "jpg", "jpeg", "webp", "gif"]
 )
 
-if not uploaded:
-    st.info("画像を1枚アップロードしてください。")
+st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
 
 output_format = st.radio(
     "出力形式",
