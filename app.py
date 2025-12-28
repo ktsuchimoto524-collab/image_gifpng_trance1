@@ -6,11 +6,7 @@ import cv2
 import random
 import urllib.parse
 
-st.markdown("""
-<head>
-<meta name="google-site-verification" content="UOB8ksPEWmyI2-x2bCPRcwEWxcQKJPbmeSt6mA_EjX4" />
-</head>
-""", unsafe_allow_html=True)
+st.markdown( '<meta name="google-site-verification" content="UOB8ksPEWmyI2-x2bCPRcwEWxcQKJPbmeSt6mA_EjX4" />', unsafe_allow_html=True )
 
 # ======================
 # 画像処理本体
@@ -112,8 +108,23 @@ st.title("静止画をそのままGIFまたはJPGに変換")
 
 st.write("① 画像をアップロード → ② 出力形式を選択 → ③ ダウンロード")
 
+st.markdown("""
+<div style="
+    border: 2px dashed #999;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+">
+📂 ここに画像をドラッグ＆ドロップ<br>
+または下のボタンから画像を選択
+</div>
+""", unsafe_allow_html=True)
+
 uploaded = st.file_uploader(
-    "画像をアップロードしてください",
+    "",
     type=["png", "jpg", "jpeg", "webp", "gif"]
 )
 
@@ -205,5 +216,4 @@ if uploaded:
     """, unsafe_allow_html=True)
 
     st.caption("※ Xのログイン情報は取得されません（公式投稿画面が開きます）")
-
 
